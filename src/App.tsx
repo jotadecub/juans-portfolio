@@ -1,4 +1,6 @@
 import { MotionConfig } from "motion/react";
+import Navbar from "./components/layout/Navbar";
+import Hero from "./sections/Hero";
 
 const containerClass = "mx-auto w-full max-w-6xl px-6 sm:px-8";
 
@@ -22,95 +24,11 @@ export default function App() {
         Saltar al contenido
       </a>
 
-      <header className="bg-[#f3f4f4] py-6">
-        <div
-          className={`${containerClass} flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between`}
-        >
-          <a
-            href="#inicio"
-            aria-label="Volver al inicio"
-            className="w-fit text-2xl font-extrabold tracking-tighter"
-          >
-            JC
-          </a>
-
-          <nav
-            aria-label="Navegación principal"
-            className="flex flex-wrap gap-x-6 gap-y-3 text-sm"
-          >
-            <a
-              href="#inicio"
-              className="underline-offset-8 hover:underline"
-            >
-              Inicio
-            </a>
-
-            <a
-              href="#experiencia"
-              className="underline-offset-8 hover:underline"
-            >
-              Experiencia
-            </a>
-
-            <a
-              href="#proyectos"
-              className="underline-offset-8 hover:underline"
-            >
-              Proyectos
-            </a>
-
-            <a
-              href="#sobre-mi"
-              className="underline-offset-8 hover:underline"
-            >
-              Sobre mí
-            </a>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <main id="contenido" tabIndex={-1}>
-        {/* Inicio */}
-        <section
-          id="inicio"
-          aria-labelledby="inicio-title"
-          className={`${sectionClass} bg-[#f3f4f4]`}
-        >
-          <div
-            className={`${containerClass} grid items-center gap-12 lg:grid-cols-2`}
-          >
-            <div>
-              <p className={eyebrowClass}>Hola, soy</p>
-
-              <h1
-                id="inicio-title"
-                className="text-5xl leading-none font-extrabold tracking-tighter sm:text-6xl lg:text-7xl"
-              >
-                Tu nombre
-                <span className="block text-[#737b80]">
-                  Tu apellido
-                </span>
-              </h1>
-
-              <p className="mt-5 text-lg">
-                Desarrollador de Software
-              </p>
-
-              <p
-                className={`${descriptionClass} text-[#555e63]`}
-              >
-                Aquí irá una presentación breve sobre ti y las
-                soluciones que te gusta construir.
-              </p>
-            </div>
-
-            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-[#aab2b6] bg-[#e8ebec] p-6">
-              <p className="text-center text-sm text-[#555e63]">
-                Aquí irá la imagen de la portada
-              </p>
-            </div>
-          </div>
-        </section>
+      
+        <Hero />
 
         {/* Experiencia */}
         <section
