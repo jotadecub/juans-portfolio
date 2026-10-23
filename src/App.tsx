@@ -1,6 +1,7 @@
 import { MotionConfig } from "motion/react";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./sections/Hero";
+import Experience from "./sections/Experience";
 
 const containerClass = "mx-auto w-full max-w-6xl px-6 sm:px-8";
 
@@ -30,37 +31,7 @@ export default function App() {
       
         <Hero />
 
-        {/* Experiencia */}
-        <section
-          id="experiencia"
-          aria-labelledby="experiencia-title"
-          className={`${sectionClass} bg-[#101618] text-[#f3f4f4]`}
-        >
-          <div
-            className={`${containerClass} grid gap-10 lg:grid-cols-[0.8fr_1.2fr]`}
-          >
-            <div>
-              <p className={eyebrowClass}>Mi experiencia</p>
-
-              <h2 id="experiencia-title" className={titleClass}>
-                Experiencia
-              </h2>
-
-              <p
-                className={`${descriptionClass} text-[#bbc1c4]`}
-              >
-                Aquí presentaremos tu experiencia y los proyectos
-                en los que has participado.
-              </p>
-            </div>
-
-            <div className="flex min-h-48 items-center justify-center rounded-2xl border border-dashed border-[#465257] p-6">
-              <p className="text-center text-sm text-[#bbc1c4]">
-                Aquí irá la línea de tiempo
-              </p>
-            </div>
-          </div>
-        </section>
+        <Experience />
 
         {/* Proyectos */}
         <section
