@@ -1,122 +1,232 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { MotionConfig } from "motion/react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const containerClass = "mx-auto w-full max-w-6xl px-6 sm:px-8";
 
+const sectionClass = "py-16 sm:py-20 lg:py-24";
+
+const eyebrowClass =
+  "mb-3 text-xs font-bold uppercase tracking-[0.2em]";
+
+const titleClass =
+  "text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl";
+
+const descriptionClass = "mt-4 max-w-xl text-base leading-7";
+
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+    <MotionConfig reducedMotion="user">
+      <a
+        href="#contenido"
+        className="sr-only z-50 rounded-lg bg-white px-4 py-3 text-black focus:not-sr-only focus:absolute focus:top-4 focus:left-4"
+      >
+        Saltar al contenido
+      </a>
+
+      <header className="bg-[#f3f4f4] py-6">
+        <div
+          className={`${containerClass} flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between`}
         >
-          Count is {count}
-        </button>
-      </section>
+          <a
+            href="#inicio"
+            aria-label="Volver al inicio"
+            className="w-fit text-2xl font-extrabold tracking-tighter"
+          >
+            JC
+          </a>
 
-      <div className="ticks"></div>
+          <nav
+            aria-label="Navegación principal"
+            className="flex flex-wrap gap-x-6 gap-y-3 text-sm"
+          >
+            <a
+              href="#inicio"
+              className="underline-offset-8 hover:underline"
+            >
+              Inicio
+            </a>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+            <a
+              href="#experiencia"
+              className="underline-offset-8 hover:underline"
+            >
+              Experiencia
+            </a>
+
+            <a
+              href="#proyectos"
+              className="underline-offset-8 hover:underline"
+            >
+              Proyectos
+            </a>
+
+            <a
+              href="#sobre-mi"
+              className="underline-offset-8 hover:underline"
+            >
+              Sobre mí
+            </a>
+          </nav>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <main id="contenido" tabIndex={-1}>
+        {/* Inicio */}
+        <section
+          id="inicio"
+          aria-labelledby="inicio-title"
+          className={`${sectionClass} bg-[#f3f4f4]`}
+        >
+          <div
+            className={`${containerClass} grid items-center gap-12 lg:grid-cols-2`}
+          >
+            <div>
+              <p className={eyebrowClass}>Hola, soy</p>
+
+              <h1
+                id="inicio-title"
+                className="text-5xl leading-none font-extrabold tracking-tighter sm:text-6xl lg:text-7xl"
+              >
+                Tu nombre
+                <span className="block text-[#737b80]">
+                  Tu apellido
+                </span>
+              </h1>
+
+              <p className="mt-5 text-lg">
+                Desarrollador de Software
+              </p>
+
+              <p
+                className={`${descriptionClass} text-[#555e63]`}
+              >
+                Aquí irá una presentación breve sobre ti y las
+                soluciones que te gusta construir.
+              </p>
+            </div>
+
+            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-[#aab2b6] bg-[#e8ebec] p-6">
+              <p className="text-center text-sm text-[#555e63]">
+                Aquí irá la imagen de la portada
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Experiencia */}
+        <section
+          id="experiencia"
+          aria-labelledby="experiencia-title"
+          className={`${sectionClass} bg-[#101618] text-[#f3f4f4]`}
+        >
+          <div
+            className={`${containerClass} grid gap-10 lg:grid-cols-[0.8fr_1.2fr]`}
+          >
+            <div>
+              <p className={eyebrowClass}>Mi experiencia</p>
+
+              <h2 id="experiencia-title" className={titleClass}>
+                Experiencia
+              </h2>
+
+              <p
+                className={`${descriptionClass} text-[#bbc1c4]`}
+              >
+                Aquí presentaremos tu experiencia y los proyectos
+                en los que has participado.
+              </p>
+            </div>
+
+            <div className="flex min-h-48 items-center justify-center rounded-2xl border border-dashed border-[#465257] p-6">
+              <p className="text-center text-sm text-[#bbc1c4]">
+                Aquí irá la línea de tiempo
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Proyectos */}
+        <section
+          id="proyectos"
+          aria-labelledby="proyectos-title"
+          className={`${sectionClass} bg-[#f3f4f4]`}
+        >
+          <div className={containerClass}>
+            <p className={eyebrowClass}>Mis proyectos</p>
+
+            <h2 id="proyectos-title" className={titleClass}>
+              Proyectos destacados
+            </h2>
+
+            <p className={`${descriptionClass} text-[#555e63]`}>
+              Una selección de proyectos con sus tecnologías,
+              capturas y enlaces.
+            </p>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {[1, 2].map((number) => (
+                <div
+                  key={number}
+                  className="flex min-h-64 items-center justify-center rounded-2xl border border-dashed border-[#aab2b6] p-6"
+                >
+                  <p className="text-sm text-[#555e63]">
+                    Espacio para el proyecto {number}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Sobre mí */}
+        <section
+          id="sobre-mi"
+          aria-labelledby="sobre-mi-title"
+          className={`${sectionClass} bg-[#101618] text-[#f3f4f4]`}
+        >
+          <div
+            className={`${containerClass} grid gap-10 lg:grid-cols-2`}
+          >
+            <div>
+              <p className={eyebrowClass}>Sobre mí</p>
+
+              <h2 id="sobre-mi-title" className={titleClass}>
+                Un poco sobre mí
+              </h2>
+
+              <p
+                className={`${descriptionClass} text-[#bbc1c4]`}
+              >
+                Aquí contaremos tu historia, tus intereses y cómo
+                abordas los desafíos al desarrollar software.
+              </p>
+            </div>
+
+            <div className="flex min-h-40 items-center justify-center rounded-2xl border border-dashed border-[#465257] p-6">
+              <p className="text-center text-sm text-[#bbc1c4]">
+                Aquí irán enfoque, mentalidad y pasiones
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-[#101618] text-[#f3f4f4]">
+        <div className={containerClass}>
+          <div className="flex flex-col gap-4 border-t border-[#354044] py-6 sm:flex-row sm:items-center sm:justify-between">
+            <a
+              href="#inicio"
+              aria-label="Volver al inicio"
+              className="w-fit text-xl font-extrabold tracking-tighter"
+            >
+              JC
+            </a>
+
+            <p className="text-sm text-[#bbc1c4]">
+              Gracias por visitar mi portfolio.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </MotionConfig>
+  );
 }
-
-export default App
