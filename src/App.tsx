@@ -2,6 +2,7 @@ import { MotionConfig } from "motion/react";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./sections/Hero";
 import Experience from "./sections/Experience";
+import Projects from "./sections/Projects";
 
 const containerClass = "mx-auto w-full max-w-6xl px-6 sm:px-8";
 
@@ -33,39 +34,8 @@ export default function App() {
 
         <Experience />
 
-        {/* Proyectos */}
-        <section
-          id="proyectos"
-          aria-labelledby="proyectos-title"
-          className={`${sectionClass} bg-[#f3f4f4]`}
-        >
-          <div className={containerClass}>
-            <p className={eyebrowClass}>Mis proyectos</p>
-
-            <h2 id="proyectos-title" className={titleClass}>
-              Proyectos destacados
-            </h2>
-
-            <p className={`${descriptionClass} text-[#555e63]`}>
-              Una selección de proyectos con sus tecnologías,
-              capturas y enlaces.
-            </p>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {[1, 2].map((number) => (
-                <div
-                  key={number}
-                  className="flex min-h-64 items-center justify-center rounded-2xl border border-dashed border-[#aab2b6] p-6"
-                >
-                  <p className="text-sm text-[#555e63]">
-                    Espacio para el proyecto {number}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        <Projects />
+        
         {/* Sobre mí */}
         <section
           id="sobre-mi"
