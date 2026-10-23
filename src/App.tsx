@@ -1,11 +1,12 @@
 import { MotionConfig } from "motion/react";
+
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+
 import Hero from "./sections/Hero";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import About from "./sections/About";
-
-const containerClass = "mx-auto w-full max-w-6xl px-6 sm:px-8";
 
 export default function App() {
   return (
@@ -26,23 +27,7 @@ export default function App() {
         <About />
       </main>
 
-      <footer className="bg-[#101618] text-[#f3f4f4]">
-        <div className={containerClass}>
-          <div className="flex flex-col gap-4 border-t border-[#354044] py-6 sm:flex-row sm:items-center sm:justify-between">
-            <a
-              href="#inicio"
-              aria-label="Volver al inicio"
-              className="w-fit text-xl font-extrabold tracking-tighter"
-            >
-              JC
-            </a>
-
-            <p className="text-sm text-[#bbc1c4]">
-              Gracias por visitar mi portfolio.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </MotionConfig>
   );
 }
