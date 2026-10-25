@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import type { Project } from "../../types/project";
+import TechnologyList from "../ui/TechnologyList";
 
 type ProjectCardProps = {
   project: Project;
@@ -59,7 +60,7 @@ export default function ProjectCard({
         >
           {project.title}
         </h3>
-        
+
         <p className="text-xs font-medium text-[#555e63]">
           {project.category}
         </p>
@@ -68,19 +69,12 @@ export default function ProjectCard({
           {project.description}
         </p>
 
-        <ul
-          aria-label="Tecnologías utilizadas"
-          className="mt-5 flex flex-wrap gap-2"
-        >
-          {project.technologies.map((technology) => (
-            <li
-              key={technology}
-              className="rounded-md border border-[#d5dadd] bg-[#e9edef] px-2 py-1 text-xs font-medium text-[#39494f]"
-            >
-              {technology}
-            </li>
-          ))}
-        </ul>
+        <div className="mt-5">
+          <TechnologyList
+            technologies={project.technologies}
+            theme="light"
+          />
+        </div>
 
         {hasLinks && (
           <div className="mt-auto pt-6">

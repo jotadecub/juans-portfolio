@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import type { Experience } from "../../types/experience";
+import TechnologyList from "../ui/TechnologyList";
 
 type ExperienceItemProps = {
   experience: Experience;
@@ -63,19 +64,12 @@ export default function ExperienceItem({
             {experience.description}
           </p>
 
-          <ul
-            aria-label="Tecnologías utilizadas"
-            className="mt-4 flex flex-wrap gap-2"
-          >
-            {experience.technologies.map((technology) => (
-              <li
-                key={technology}
-                className="rounded-lg border border-[#354044] bg-[#1a2226] px-2.5 py-1.5 text-xs font-medium text-[#e1e6e8]"
-              >
-                {technology}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-5">
+            <TechnologyList
+              technologies={experience.technologies}
+              theme="light"
+            />
+          </div>
         </div>
       </motion.article>
     </li>
