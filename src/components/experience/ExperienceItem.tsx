@@ -64,6 +64,16 @@ export default function ExperienceItem({
             {experience.description}
           </p>
 
+          {experience.highlights && experience.highlights.length > 0 && (
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[#bbc1c4] marker:text-[#8a989f]">
+              {experience.highlights.map((highlight) => (
+                <li key={highlight}>
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          )}
+
           <div className="mt-5">
             <TechnologyList
               technologies={experience.technologies}
